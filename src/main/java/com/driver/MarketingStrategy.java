@@ -17,6 +17,9 @@ public class MarketingStrategy {
 
     // Getters and Setters
 
+
+
+
     public String getName() {
     	//your code goes here
         return name;
@@ -41,7 +44,11 @@ public class MarketingStrategy {
     	//your code goes here
         return potentialROI;
     }
-    
+
+    public void setDescription(String description) { this.description = description; }
+    public void setTargetAudience(String targetAudience) { this.targetAudience = targetAudience; }
+    public void setBudget(double budget) { this.budget = budget; }
+    public void setPotentialROI(double potentialROI) { this.potentialROI = potentialROI; }
 
     @Override
     public String toString() {

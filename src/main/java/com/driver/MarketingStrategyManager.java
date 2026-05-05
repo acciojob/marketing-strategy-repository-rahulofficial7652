@@ -13,6 +13,8 @@ public class MarketingStrategyManager {
 
     public void createStrategy(MarketingStrategy strategy) {
     	//your code goes here
+        strategies.add(strategy);
+
     }
 
     public MarketingStrategy getStrategyByName(String name) {
@@ -25,10 +27,20 @@ public class MarketingStrategyManager {
 
     public void updateStrategy(MarketingStrategy updatedStrategy) {
     	//your code goes here
+        for (MarketingStrategy s : strategies){
+            if(s.getName().equalsIgnoreCase(updatedStrategy.getName())){
+                s.setDescription(updatedStrategy.getDescription());
+                s.setTargetAudience(updatedStrategy.getTargetAudience());
+                s.setBudget(updatedStrategy.getBudget());
+                s.setPotentialROI(updatedStrategy.getPotentialROI());
+                break;
+            }
+        }
     }
 
     public void deleteStrategy(String name) {
     	//your code goes here
+        strategies.removeIf(s ->s.getName().equalsIgnoreCase(name));
     }
 
     public List<MarketingStrategy> getStrategiesInBudgetRange(double minBudget, double maxBudget) {
